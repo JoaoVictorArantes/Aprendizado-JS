@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de HTML</title>
+</head>
+<body>
+    <header>
+        Exercícios de HTML
+    </header>
+    <nav>
+        <a href Custom="Exercicios/teste.html">00 - teste.</a><!-- Alterar apenas essa parte conforme a pasta Exercicios/-->
+        <a href Custom="Exercicios/temp.html">TEMP.</a><!-- Alterar apenas essa parte conforme a pasta Exercicios/-->
+    </nav>
+    <section id="Conteudo"></section>
+    <footer>
+        Tentando fazer o curso de Web Moderno, na Udemy.
+    </footer>
+    <script>
+        document.querySelectorAll('[Custom]').forEach(link => {
+            link.onclick = function (evento){
+                evento.preventDefault();
+
+                const conteudo = document.getElementById('Conteudo')
+
+                fetch(link.getAttribute('Custom'))
+                    .then(resposta => resposta.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+</html>
