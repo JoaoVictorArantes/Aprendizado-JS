@@ -1,0 +1,51 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <span mostraESome>backend</span> <!-- AJUSTE 1: Garanti que todos são 'mostraESome' -->
+        <ul>
+            <li>
+                <span mostraESome>app</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>vendas.js</li>
+                </ul>
+            </li>
+            <li>
+                <span mostraESome>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span mostraESome>frontend</span>
+        <ul>
+            <li>
+                <span mostraESome>public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    document.querySelectorAll('[mostraESome]').forEach(pasta => {
+        // AJUSTE 2: De 'onClick' para 'onclick' (minúsculo)
+        pasta.onclick = function(evento){
+            // AJUSTE 3: Removi o 'console.log(teste)' que quebrava o código
+            
+            const proximoElemento = pasta.nextElementSibling;
+            const displayAtual = proximoElemento.style.display;
+            
+            proximoElemento.style.display = displayAtual === 'none' ? 'block' : 'none';
+        }
+    })
+</script>
