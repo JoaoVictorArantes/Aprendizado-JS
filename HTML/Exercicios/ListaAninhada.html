@@ -1,10 +1,10 @@
 <h1>Projeto</h1>
-<ul class="tree">
+<ul class = "tree">
     <li>
-        <span mostraESome>backend</span> <!-- AJUSTE 1: Garanti que todos são 'mostraESome' -->
+        <span teste>backend</span>
         <ul>
             <li>
-                <span mostraESome>app</span>
+                <span teste>app</span>
                 <ul>
                     <li>produto.js</li>
                     <li>usuario.js</li>
@@ -12,7 +12,7 @@
                 </ul>
             </li>
             <li>
-                <span mostraESome>config</span>
+                <span teste>config</span>
                 <ul>
                     <li>banco.js</li>
                     <li>rotas.js</li>
@@ -22,10 +22,10 @@
         </ul>
     </li>
     <li>
-        <span mostraESome>frontend</span>
+        <span teste>frontend</span>
         <ul>
             <li>
-                <span mostraESome>public</span>
+            <span teste>public</span> 
                 <ul>
                     <li>app.css</li>
                     <li>app.js</li>
@@ -35,17 +35,13 @@
         </ul>
     </li>
 </ul>
-
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
 <script>
-    document.querySelectorAll('[mostraESome]').forEach(pasta => {
-        // AJUSTE 2: De 'onClick' para 'onclick' (minúsculo)
-        pasta.onclick = function(evento){
-            // AJUSTE 3: Removi o 'console.log(teste)' que quebrava o código
-            
+    document.querySelectorAll('[teste]').forEach(pasta => {
+        pasta.onclick = function (evento) {
             const proximoElemento = pasta.nextElementSibling;
-            const displayAtual = proximoElemento.style.display;
-            
-            proximoElemento.style.display = displayAtual === 'none' ? 'block' : 'none';
+            const displayDaListaDesordenada = proximoElemento.style.display;
+            proximoElemento.style.display = displayDaListaDesordenada === 'none' ? 'block' : 'none'; 
         }
     })
 </script>
