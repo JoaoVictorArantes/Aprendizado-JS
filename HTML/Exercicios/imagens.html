@@ -1,0 +1,89 @@
+<div slider>
+        <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
+        alt="Muro da Cidade"
+        width="513" height="342"
+        title="Muro da cidade por Tarso Bessa.">
+    </p>
+    <p>
+            <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+        alt="Intro Cod3r" height="342"> 
+
+    </p>
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+        alt="Rio de Janeiro" height="342">
+
+    </p>
+
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
+        alt="Avatar" height="50" align="left">
+    <br>
+    Alguns programadores com quem mantenho contato pela Internet afirmam: o ASP.
+NET MVC é muito difícil comparado ao ASP.NET Web Forms. Na minha opinião
+o ASP.NET MVC não é difícil, mas diferente. Por exemplo, o ASP.NET Web Forms é
+semelhante ao modelo de programação usado pelo Visual Basic ou Delphi, ao qual
+a maioria dos programadores atuais está acostumado. <br>
+No ASP.NET MVC você programa métodos e não eventos. Há também separação entre
+o código que interage com o usuário, o design e a camada de dados. Tudo isso parece
+estranho para programadores acostumados a programar eventos em formulários.<br>
+Outros programadores afirmam que têm dificuldades em aprender ASP.NET MVC. <br>
+Acredito que a dificuldade no aprendizado se deve ao fato de a maioria do conteúdo estar
+em inglês ou em pequenos tutoriais em português. No momento em que escrevo este
+texto – início de junho de 2011 –, há poucos livros em português sobre ASP.NET MVC.
+    </p>
+
+    <p class="cidade">
+
+    </p>
+
+    <p>
+        <picture>
+             <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+             media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo Estreita">
+        </picture>
+    </p>
+
+</div>
+
+
+
+<style>
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+    .texto {
+        width: 400px;
+    }
+    .texto img {
+        margin-right: 10px;
+    }
+    .cidade{
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    }
+</style>
+<script>
+    function mover(elemento, inicio, fim, passo, callback){
+        const novoInicio = inicio - passo; 
+        if (novoInicio >= fim) {
+            elemento.style.left = novoInicio + 'px';
+            setTimeout(() => mover(elemento, novoInicio, fim, passo, callback), 7)
+        }else {
+            callback();
+        }
+    }
+    const teste = document.querySelector('slider > teste')
+    teste.style.display = 'block'
+    mover(teste, 1500, -400,5, () => {
+        console.log("Terminou.")
+    })
+
+</script>

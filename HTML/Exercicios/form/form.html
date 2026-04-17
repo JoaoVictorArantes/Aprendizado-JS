@@ -1,6 +1,7 @@
 <h1>Forms - Formulário</h1>
 
-<form action="http://127.0.0.1:5501/usuarios" method="post">
+<form method="post">
+    <input type="hidden" name="id" value="3">
     <input type="text" name="nome">
     <input type="password" name= "Senha">
     <textarea name="bio" cols="30" rows="10"></textarea>
@@ -12,7 +13,22 @@
     <div>
         <input type="checkbox" name="Ativo">Ativo
     </div>
-    <button>Incluir</button>
+    <select name="estado">
+        <option value="">Selecione</option>
+        <option value="AC">Acre</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MG">Minas Gerais</option>
+    </select>
+    <select name="interesses" multiple size="5">
+        <option value="js">Java Script</option>
+        <option value="Java">Java</option>
+        <option value="Go">Go</option>
+        <option value="Rust">Rust</option>
+        <option value="C++">C++</option>
+    </select>
+
+    <button formaction="http://127.0.0.1:5501/usuarios">Incluir</button>
+    <button>Alterar</button>
 </form>
 
 <style>

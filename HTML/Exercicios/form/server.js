@@ -6,7 +6,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/usuarios', (requisicao, resposta) =>{
     console.log(requisicao.body);
-    resposta.send("<h1>Parabéns!</h1>");
+    resposta.send("<h1>Parabéns! Usuário incluido.</h1>");
+});
+
+app.post('/usuarios/:id', (requisicao, resposta) =>{
+    console.log(requisicao.params.id);
+    console.log(requisicao.body);
+    resposta.send("<h1>Parabéns! Usuário alterado.</h1>");
 });
 
 /*app.listen(5501);*/
